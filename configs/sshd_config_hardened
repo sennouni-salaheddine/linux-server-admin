@@ -1,0 +1,24 @@
+# Geharde SSH configuratie — Ubuntu Server
+# Gegenereerd na toepassing van ssh-hardening.sh
+
+Port 22
+Protocol 2
+
+# Authenticatie
+PermitRootLogin no
+MaxAuthTries 3
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+
+# Sessie timeout
+ClientAliveInterval 600
+ClientAliveCountMax 0
+
+# Overig
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+
